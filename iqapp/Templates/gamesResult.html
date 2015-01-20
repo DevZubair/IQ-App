@@ -1,0 +1,23 @@
+
+<div class="container" >
+   <u style="color: darkred"> <h1 style="text-align: center; font-family: cursive;color: darkred">{{$parent.resultType}} Results</h1></u>
+<table class="CSS_Table_Example">
+    <thead>
+    <tr>
+    <td class="col-lg-2" >Player Names</td>
+    <td class="col-lg-2" >Level1(mins)</td>
+    <td class="col-lg-2" >Level2(mins)</td>
+    <td class="col-lg-2" >Level3(mins)</td>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="result in $parent.gameResultData">
+        <td class="col-lg-2">{{result.userName}}</td>
+        <td class="col-lg-2">{{result.level1}}</td>
+        <td class="col-lg-2">{{result.level2}}</td>
+        <td class="col-lg-2">{{result.level3}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>

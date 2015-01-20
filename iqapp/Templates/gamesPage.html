@@ -1,0 +1,126 @@
+<div id="puzzle" class="content-section-a">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <button class="btn btn-success" ng-click="resultPage('puzzle')">show Results</button>
+
+
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+
+                <h2 class="section-heading">Puzzle</h2>
+                <p class="lead"> "There are no extra pieces in the universe. Everyone is here because he or she has a place to fill,
+                    and every piece must fit itself into the big jigsaw puzzle."
+                    Test your mind by solving different puzzles in limited time. Share it with your friends and ask them to
+                    try it.</p>
+
+
+
+                <div class="main clearfix" >
+
+                    <div class="circle" data-toggle="modal" data-target="#gamesModal" ng-click="changeGameType('puzzle')">
+                        <h1>Solve Here</h1>
+                    <div class="circle" data-toggle="modal" data-target="#gamesModal" ng-click="">
+                        <h1>Solve</h1>
+
+                    </div>
+                </div>
+
+
+            </div>
+                <div style="margin-left: 700px; margin-top: -250px">
+                <img src="img/GameImage(1).png" alt="">
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- /.container -->
+
+</div>
+
+    </div>
+
+<div id="difference" class="content-section-b">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <button class="btn btn-success" ng-click="resultPage('difference')">show Results</button>
+
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+
+                <h2 class="section-heading">Picture Matching</h2>
+                <p class="lead">
+                    Lets play some exciting picture matching game in which you have to identify the difference between two
+                    look alike similar pictures. Let's see how much fast can you spot all the differences and compare your result with your
+                    friends. Cheers!
+                   </p>
+
+                <div class="main clearfix">
+
+                    <div class="circle" data-toggle="modal" data-target="#gamesModal" ng-click="changeGameType('difference')">
+                        <h1>Take Test</h1>
+
+                    <div class="circle" data-toggle="modal" data-target="#gamesModal" ng-click="updateQuestionType(1)">
+                        <h1>Start Here</h1>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: -700px; margin-top: -250px">
+                <img src="img/difference.jpg" alt="" style="width: 300px; height: 200px">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+    </div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="gamesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Preferences</h4>
+            </div>
+
+            <div class="modal-body" style="text-align: center">
+
+                    Rules:
+                <div>
+                    <p style="font-family: cursive" ng-if="gameType=='puzzle'">
+                        Solve the puzzle by seeing the original image provided there, you will be asked to solve the puzzle in all the
+                        time you need but keeping this in mind that the less you take time, the less you will lower down your grade.
+                        Enjoy!
+                    </p>
+
+                    <p style="font-family: cursive" ng-if="gameType=='difference'">
+                       You will be given two pictures which will look alike but there will be minor differences between them, your
+                        intelligent mind will have to find those differences. Timer will be played as soon as you start playing the
+                        game.
+                        Enjoy!
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" ng-click="changeUrl()" class="btn btn-primary" data-dismiss="modal">Create Quiz</button>
+            </div>
+        </div>
+    </div>
+</div>
+

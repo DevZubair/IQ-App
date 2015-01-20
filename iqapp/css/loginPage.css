@@ -1,0 +1,60 @@
+.facebookLogin{
+
+    width: 1000px;
+    height: 1000px;
+
+    /* The magic centering code */
+    margin:auto;
+    position:absolute;
+    top:600px;bottom:0; /* Aligns Vertically - Remove for Horizontal Only */
+    left:0;right:0; /* Aligns Horizontally - Remove for Vertical Only  */
+
+    /* Prevent div from overflowing main window */
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+
+}
+.facebookLogin>img
+{
+    width: 80px;
+    height: 80px;
+
+}
+.tableClass{
+    border: solid 1px #000000;
+    font-family: cursive;
+    font-size: 30px;
+}
+.field{
+    margin: 0 0 30px 0;
+    padding: 18px;
+    border: 2px solid #ddd;
+    background-color: white;
+    border-radius: 10px;
+    display: inline-block;
+}
+.leg{
+    font-weight: bold;
+    padding: 3px 12px;
+    display: block;
+    background-color: #e4e4e4;
+    border-radius: 6px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.facebookLogin>button>h4
+{
+    color: #ffffff;
+    font-family: cursive;
+}
+.facebookLogin>button{
+
+    opacity: 0.9;
+    text-decoration: none;
+}

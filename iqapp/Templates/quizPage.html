@@ -1,0 +1,37 @@
+<div id="questionsPage">
+
+
+
+    <div class="container jumbotron" style="width: 1000px">
+
+        <div style="text-align: center">
+            <timer duration={{clockTime*60}} autostart='true' class='timer-app'></timer>
+        </div>
+
+        <div id="quizPageMainDiv" class="container">
+
+            <h1 style="font-size: 3em; color: orange;font-family: cursive; text-align: center;">{{data.Title}} Quiz</h1>
+
+
+            <div>
+                <h3 style="font-family: Georgia; font-size: 2em">{{$parent.data.Questions[questionNumber]}}</h3>
+            </div>
+        </div>
+        <div class="container">
+            <div ng-repeat="answer in data.Answers[questionNumber]" style="width: 30%;margin-top: 20px">
+
+                <input type="radio"ng-model="$parent.userAnswer" ng-value="answer" name="correct"/>
+
+                <h2 style="display: inline; margin-left: 2px">{{answer}}</h2>
+
+
+
+            </div>
+        </div>
+
+        <button class="btn btn-success btn-lg" style="cursor: pointer; float: right" ng-click="changeQuestion()" data-toggle="progressbar" data-target="#myProgressbar" data-value="{{$parent.resultPercentage}}">Next</button>
+
+    </div>
+
+
+</div>

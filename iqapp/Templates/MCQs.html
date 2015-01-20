@@ -1,0 +1,158 @@
+<div id="programming" class="content-section-a" xmlns="http://www.w3.org/1999/html">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <button class="btn btn-success" ng-click="resultShownFunction('Programming')">Show Results</button>
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Programming</h2>
+                <p class="lead">Try your IQ level by taking a test in different fields to enhance your knowledge. Plus you can also
+                    create your own Quiz by setting time and number of questions. Result will be stored which can be viewed
+                    later, Multiplayer facility is also provided so that you can compare your IQ with other person as well.
+                    Have fun!</p>
+
+
+
+                <div class="main clearfix" >
+                    <div class="circle" data-toggle="modal" data-target="#myModal" ng-click="updateQuestionType('0')">
+                        <h1>Take Test</h1>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="img/programming.png" alt="">
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- /.container -->
+
+</div>
+
+
+<div id="networking" class="content-section-b">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <button class="btn btn-success" ng-click="resultShownFunction('Networking')">Show Results</button>
+
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Networking</h2>
+                <p class="lead">"Life is more fun if you play games.”
+                    ― Roald Dahl
+                    <br>
+                    Play exciting games and solve puzzles to test your IQ in gaming world.
+
+                    Multi users can play together to compare their intelligence afterwards by
+                    seeing your result in different formats. Have fun!</p>
+
+                <div class="main clearfix">
+                    <div class="circle" data-toggle="modal" data-target="#myModal" ng-click="updateQuestionType(1)">
+                        <h1>Take Test</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+                <img class="img-responsive" src="img/network_cabling.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+
+
+<div id="IntelligenceQuotient" class="content-section-a">
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <button class="btn btn-success" ng-click="resultShownFunction('General Knowledge')">Show Results</button>
+
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">General Knowledge</h2>
+                <p class="lead">"Life is more fun if you play games.”
+                    ― Roald Dahl
+                    <br>
+                    Play exciting games and solve puzzles to test your IQ in gaming world.
+
+                    Multi users can play together to compare their intelligence afterwards by
+                    seeing your result in different formats. Have fun!</p>
+
+                <div class="main clearfix" >
+                    <div class="circle" ng-click="updateQuestionType(2)" data-toggle="modal" data-target="#myModal" ng-click="updateQuestionType(2)">
+                        <h1>Take Test</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="img/general%20knowledge.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="text-align: center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Preferences</h4>
+            </div>
+            <div class="modal-body">
+                Select number of questions:
+                <select ng-model="$parent.numberOfQuestions">
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+                </select>
+
+
+
+            </div>
+            <div class="modal-body">
+
+                Set the time(Mins):
+                <div class="minusPlusButton">
+                    <img src="img/minusButton.png" ng-click="changeTime(0)"/>
+                    <h4 style="display: inline">{{clockTime}}</h4>
+                    <img src="img/plusButton.png" ng-click="changeTime(1)"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" ng-click="changeUrl()" class="btn btn-primary" data-dismiss="modal">Create Quiz</button>
+            </div>
+        </div>
+    </div>
+</div>
+

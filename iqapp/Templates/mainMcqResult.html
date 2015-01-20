@@ -1,0 +1,24 @@
+
+<div class="container" >
+    <u style="color: darkred"> <h1 style="text-align: center; font-family: cursive;color: darkred">{{$parent.data.Title}} Results</h1></u>
+
+    <table class="CSS_Table_Example">
+
+        <tr style="padding: 20px;">
+            <td style="padding: 20px;" class="col-lg-2" >Names</td>
+            <td style="padding: 20px;" class="col-lg-2" >Questions Attempted</td>
+            <td style="padding: 20px;" class="col-lg-2" >Correct Answers</td>
+            <td style="padding: 20px;" class="col-lg-2" >Percentage(%)</td>
+
+        </tr>
+
+        <tbody>
+        <tr style="padding: 20px;" ng-repeat="result in $parent.mainMcqResult">
+            <td style="padding: 20px;" class="col-lg-2">{{result.userName}}</td>
+            <td style="padding: 20px;" class="col-lg-2">{{result.questionsSelected}}</td>
+            <td style="padding: 20px;" class="col-lg-2">{{result.questionsCorrect}}</td>
+            <td style="padding: 20px;" class="col-lg-2">{{result.percentage}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

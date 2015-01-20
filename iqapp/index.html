@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Test Your IQ</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="lib/bootstrap.min.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/loginPage.css" rel="stylesheet">
+    <link href="css/mainPageStyle.css" rel="stylesheet">
+    <link href="css/sideBar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animation.css"/>
+    <!-- Custom Fonts -->
+    <link href="lib/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/circleButton.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="css/pageChange.css" />
+    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/resultPage.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/divider.css">
+    <!--js libraries-->
+
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/transition.js"></script>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+
+    <script src="lib/ui-bootstrap-tpls-0.12.0.min.js"></script>
+    <script src="lib/bootstrapProgressBar.js"></script>
+
+
+    <script src="lib/angular-animate.js"></script>
+    <script src="lib/angular-resource.js"></script>
+    <script src="lib/ngFacebook.js"></script>
+
+    <!--Directives-->
+    <script src="js/Directives/sidebar.js"></script>
+    <script src="js/Directives/goTop.js"></script>
+    <script src="js/Directives/timer.js"></script>
+
+    <!--js files-->
+    <script src="js/puzzleJs/puzzle.js"></script>
+    <script src="js/puzzleJs/app.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="lib/modernizr.custom.46884.js"></script>
+
+    <!--Controllers-->
+
+    <script src="js/Service.js"></script>
+    <script src="js/Controllers/mcqController.js"></script>
+    <script src="js/Controllers/mcqQuestionController.js"></script>
+    <script src="js/Controllers/gamesController.js"></script>
+    <script src="js/Controllers/differenceController.js"></script>
+    <script src="js/Controllers/resultController.js"></script>
+
+
+
+</head>
+
+<body>
+
+<div ng-controller="loginController">
+
+
+<a href="#" class="go-top">Back to top</a>
+
+
+
+<nav class="navbar navbar-fixed-top navbar-default" style="background-color: transparent; border: none">
+
+    <a href="#home"> <img src="img/iqLogo.png"></a>
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle" style="z-index: 4000"><i class="fa fa-bars"></i></a>
+
+
+
+
+
+</nav>
+
+
+
+
+<nav ng-show="allDataHide" id="sidebar-wrapper" class="sidebarTransparent" style="z-index: 2000">
+
+
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-dark btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a href="#top">{{userName}}</a>
+        </li>
+        <li>
+            <a href="#top">Home</a>
+        </li>
+        <li>
+            <a href="#mcqs">MCQs</a>
+        </li>
+        <li>
+            <a href="#games">Games</a>
+        </li>
+
+        <li>
+            <a href="#carousalAndFooter">Follow Us</a>
+        </li>
+        <li>
+            <a ng-click="logout()" style="cursor: pointer">Logout</a>
+        </li>
+    </ul>
+
+</nav>
+
+
+
+<!-- Header -->
+<div id="top" class="intro-header">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h3 style="color:orange; margin-left:-135px">Born To Be</h3>
+                    <h1 style="color:orange">Creative</h1>
+
+                    <div ng-click="login()" ng-if="allDataHide!=true">
+                        <img src="img/login-facebook.png">
+                    </div>
+
+
+                    <ul class="list-inline intro-social-buttons" ng-show="allDataHide">
+                        <li>
+                            <a href="#mcqs"><button class="btn btn-warning btn-outline btn-lg"> <span class="network-name"><i class="fa fa-book"></i>MCQs</span></button></a>
+                        </li>
+                        <li>
+                            <a href="#games"><button class="btn btn-warning btn-outline btn-lg"><i class="fa fa-life-ring"></i> <span class="network-name">Games</span></button></a>
+                        </li>
+                        <li>
+                            <a href="#carousalAndFooter"><button class="btn btn-warning btn-outline btn-lg"><i class="fa fa-phone fa-fw"></i> <span class="network-name">Contact Us</span></button></a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+
+    <hr class="myHr">
+
+</div>
+
+
+<div ng-view="" style="min-height: 500px" >
+
+
+
+
+</div>
+
+
+
+
+<div id="carousalAndFooter" ng-show="allDataHide" ng-controller="loginController" style="margin-top: 10%">
+    <hr class="myHr">
+    <div class="container">
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" style="height: 400px">
+                <div class="item active">
+                    <img src="img/facebookBanner.jpg" alt="...">
+                    <div class="carousel-caption">
+                        Facebook
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/twitterBanner.jpg" alt="...">
+                    <div class="carousel-caption">
+                        Twitter
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="img/linkedinBanner.png" alt="...">
+                    <div class="carousel-caption">
+                        LinkdIn
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- Page Content -->
+        <div class="container">
+
+
+
+
+            <div class="pager">
+                <b class="social_text">Follow us On:</b>
+
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-lg-4 fb_div_p">
+                    <img src="img/facebook-cracked.png" class="fb_div">
+                    <p>
+                        Join our Facebook page to keep yourself updated about recent activities and new games we would like
+                        to introduce in future.
+
+
+                    </p></div>
+                <div class="col-lg-4 twitter_div_p">
+                    <img src="img/Twitter_bird.png" class="twitter_div">
+                    <p>
+                        Follow us with our twitter page to see our recent tweets about activities and new games we would like
+                        to introduce in future.
+
+
+                    </p></div>
+                <div class="col-lg-4 linkedin_div_p">
+                    <img src="img/linkedin.png" class="linkedin_div">
+                    <p>
+                        Join us at LinkedIn to keep each other in contact and to share different ideas
+                        which we could make a part of our application.
+
+
+
+                    </p></div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+    <div class="footer-wrap">
+        <div id="footer" class="mod-con">
+            <div class="copyright">&copy; 2014 Copyright IQ Level Web. All Rights Reserved.</div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+<!-- /.container -->
+
+
+
+
+<script src="lib/jquery-1.11.0.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="lib/sideBar.js"></script>
+
+<script type="text/javascript" src="lib/jquery.slicebox.js"></script>
+<script type="text/javascript" src="lib/sliderAnimation.js"></script>
+
+
+
+
+</body>
+
+</html>

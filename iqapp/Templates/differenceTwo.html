@@ -1,0 +1,119 @@
+<div ng-hide="showdifferenceResult">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-lg-offset-2">
+
+                <h1>Sample:</h1>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <h1>Time:</h1>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <h1>Find Here:</h1>
+
+            </div>
+
+        </div>
+
+        <img src="img/red.40319_640.png" id="marker1" style="display: none; position: absolute;">
+        <img src="img/red.40319_640.png" id="marker2" style="display: none; position: absolute;">
+        <img src="img/red.40319_640.png" id="marker3" style="display: none; position: absolute;">
+        <img src="img/red.40319_640.png" id="marker4" style="display: none; position: absolute;">
+
+
+
+
+
+        <div class="row jumbotron" style="margin-top: 2%">
+            <div class="col-lg-3">
+                <img src="img/world1.png"/>
+            </div>
+
+            <div class="col-lg-3 col-lg-offset-2">
+                <h1>{{myStopwatch.data.min}}:{{myStopwatch.data.value}}</h1>
+            </div>
+
+
+
+            <img src="img/world2.png" id="map" usemap="#world" style="margin-left: 700px; margin-top: -269px"/>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<map name="world">
+
+
+    <area
+
+            shape="rect"
+            coords="3,100,10,110"
+            target="_self"
+            ng-click="checkTwo()"
+            onclick="area1('#marker1',event)"
+
+
+            />
+
+    <area
+            shape="rect"
+            coords="80,70,85,75"
+            target="_self"
+            ng-click="checkTwo()"
+            onclick="area1('#marker2',event)"
+
+            />
+
+    <area
+            shape="rect"
+            coords="129,2,140,10"
+            target="_self"
+            ng-click="checkTwo()"
+            onclick="area1('#marker3',event)"
+
+
+            />
+
+
+</map>
+<div ng-show="showdifferenceResult">
+    <div class="jumbotron" style="background-color: green; color: #ffffff; text-align: center; margin-top: 5%;">
+        <h1 style="font-family: cursive">Congratulation..!</h1>
+        <br>
+        <h2 style="font-family: cursive">You have completed the level in {{differenceOneTime}} minutes</h2>
+        <br>
+
+
+
+        <div id="lastLevel">
+            <button class="btn btn-primary" ng-show="buttonShow" ng-click="changeDifferenceUrl(1)">Next Level</button>
+            <button class="btn btn-primary" ng-hide="buttonShow" ng-click="changeDifferenceUrl()">Show Results</button>
+        </div>
+
+    </div>
+</div>
+
+
+</div>
+<script>
+
+
+    function area1(image,e)
+    {
+
+        $(image).css('left', e.pageX-12).css('top', e.pageY-12).show();
+        // Position of the marker is now e.pageX, e.pageY
+        // ... which corresponds to where the click was.
+    };
+
+</script>
